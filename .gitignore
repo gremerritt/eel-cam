@@ -1,0 +1,11 @@
+*.MP4
+*.mp4
+*.AVI
+*.avi
+*.MOV
+*.mov
+*.csv
+CMakeFiles
+cmake_install.cmake
+*Cache.txt
+Makefile
