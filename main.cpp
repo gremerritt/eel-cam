@@ -14,17 +14,17 @@
 #include <stack>
 #include <unistd.h>
 
-#define START_MIN 7
-#define START_SEC 40
-#define REFERENCE_MIN 10
-#define REFERENCE_SEC 0
+#define START_MIN 0
+#define START_SEC 0
+#define REFERENCE_MIN 17
+#define REFERENCE_SEC 15
 #define NUM_SKELETON_PTS 3
 #define FRAME_PROC_RATE 5
 #define DISPLAY_VIDEO 1
 #define DISPLAY_TMP_VIDEO 0
 
-#define VIDEO_NAME "GP010190.MP4"
-#define DATA_FILE_NAME "data.csv"
+#define VIDEO_NAME "WithD3.MP4"
+#define DATA_FILE_NAME "with_d3_data.csv"
 
 using namespace cv;
 using namespace std;
@@ -82,6 +82,8 @@ int main()
     VideoCapture cap;
     cap.open(VIDEO_NAME);
 
+    int num_frames = (int)(cap.get(CV_CAP_PROP_FRAME_COUNT));
+
     // if not successful, exit program
     if (!cap.isOpened())
     {
@@ -134,9 +136,12 @@ int main()
     {
       // --- GET THE FRAME ------------------------------
       cap >> frame;
-      // int frame_num = (int)cap.get(CV_CAP_PROP_POS_FRAMES);
+      int frame_num = (int)cap.get(CV_CAP_PROP_POS_FRAMES);
 
-      if (frame.empty()) break;
+      if (frame_num == num_frames) {
+        break;
+      }
+      if (frame.empty()) continue;
       if ((int)cap.get(CV_CAP_PROP_POS_FRAMES) % FRAME_PROC_RATE != 0) continue;
       // ------------------------------------------------
 
