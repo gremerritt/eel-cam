@@ -39,7 +39,6 @@ A GIF of my results can be seen below, along with a sample of the file produced.
 
 ![eels.gif](eels.gif)
 
-
     time,change_in_curvature1,change_in_curvature2,...
     0:25:24,0.001636
     0:25:191,0.142991
@@ -53,6 +52,9 @@ A GIF of my results can be seen below, along with a sample of the file produced.
     1:3:62,0.070057
 
 ### Compiling and Running
+
+You'll first want to download the video of the swimming eels
+[here](https://www.dropbox.com/l/scl/AADWW-fklT1cWhwrhG3yi5xgXzRu-AmzB08) and make sure it's in this project directory.
 
 We use OpenCV here to process the videos. As it stands, this is written to be ran on OSX with OpenCV installed via Homebrew. The following steps should allow you to compile and run the program.
 
