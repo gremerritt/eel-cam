@@ -1,7 +1,3 @@
-/*  CS585_Lab2.cpp
-    Homework 4
-*/
-
 //opencv libraries
 #include "opencv2/core/core.hpp"
 #include "opencv2/highgui/highgui.hpp"
@@ -14,22 +10,20 @@
 #include <stack>
 #include <unistd.h>
 
-#define START_MIN 0
-#define START_SEC 0
-#define REFERENCE_MIN 17
-#define REFERENCE_SEC 15
+#define START_MIN 7
+#define START_SEC 45
+#define REFERENCE_MIN 0
+#define REFERENCE_SEC 11
 #define NUM_SKELETON_PTS 3
 #define FRAME_PROC_RATE 5
 #define DISPLAY_VIDEO 1
 #define DISPLAY_TMP_VIDEO 0
 
-#define VIDEO_NAME "WithD3.MP4"
-#define DATA_FILE_NAME "with_d3_data.csv"
+#define VIDEO_NAME "NoFeed.mp4"
+#define DATA_FILE_NAME "data.csv"
 
 using namespace cv;
 using namespace std;
-
-RNG rng(12345);
 
 // Eel object holds where the eel is and it's average curvature
 struct eel {
